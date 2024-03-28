@@ -139,7 +139,7 @@ const getCoordinates = function(city, key) {
 		inputSelectedCity.value = "";
 		errorParagraph.textContent = "";
 		errorSelectedDiv.appendChild(errorParagraph);
-		const getCityCoordinatesURL = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${key}`;
+		const getCityCoordinatesURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${key}`;
 		fetch(getCityCoordinatesURL).then(function(response) {
 			if(response.ok) {
 				response.json().then(function(coordinates) {
