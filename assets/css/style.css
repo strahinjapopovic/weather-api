@@ -98,8 +98,11 @@ div#top section#current-city section#sub-section section#sub-sub div#weather-ico
 }
 
 div#top section#current-city section#sub-section section#sub-sub div#current-weather {
+  font-size: x-large;
+  font-weight: bolder;
   padding: 1vw 0 0 1vw;
   white-space: pre-line;
+  font-family: "Roboto", sans-serif;
 }
 
 div#middle {
@@ -135,11 +138,14 @@ div#middle section#days-forecast section#day-4,
 div#middle section#days-forecast section#day-5 {
   display: flex;
   margin-top: 1vw;
+  font-size: large;
+  font-weight: bold;
   margin-bottom: 1vw;
   flex-direction: row;
   border-radius: 10px;
   height: calc(100% - 2vw);
   color: var(--naval-blue);
+  font-family: "Roboto", sans-serif;
   background-color: var(--custom-gray);
   border: 3px solid var(--electron-blue);
 }
