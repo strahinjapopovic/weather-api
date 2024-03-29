@@ -15,7 +15,7 @@ New repository created at GitHub account strahinjapopovic as weather-api.
 Project has been pushed from the local storage to GitHub repo as *(main)*.
 *Continuing with Git Bash setting up dir tree and codebase...*
 
-[<img src="./assets/README-screenshots/gitbash-weather-api-dir-tree.PNG" width="1000" alt="GitBash screenshot." />](./assets/README-screenshots/gitbash-weather-api-dir-tree.PNG)
+[<img src="https://github.com/strahinjapopovic/weather-api/assets/README-screenshots/gitbash-weather-api-dir-tree.PNG" width="1000" alt="GitBash screenshot." />](./assets/README-screenshots/gitbash-weather-api-dir-tree.PNG)
 
 Repo weather-api was pushed remotely as **(main)** with Git Bash to GitHub existing repo.
 
