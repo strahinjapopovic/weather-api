@@ -73,7 +73,7 @@ div#top section#current-city {
 }
 
 div#top section#current-city section#sub-section {
-  height: 350px;
+  height: 300px;
   margin-top: 1vw;
   margin-left: 0.5vw;
   border-radius: 5px;
@@ -88,7 +88,7 @@ div#top section#current-city section#sub-section section#sub-sub {
   border-radius: 10px;
   flex-direction: row;
   margin: 1vw 1vw 1vw 1vw;
-  height: calc(350px - 2vw);
+  height: calc(300px - 2vw);
   background-color: var(--custom-gray);
   border: 3px solid var(--electron-blue);
 }
@@ -138,7 +138,7 @@ div#middle section#days-forecast section#day-4,
 div#middle section#days-forecast section#day-5 {
   display: flex;
   margin-top: 1vw;
-  font-size: small;
+  font-size: medium;
   font-weight: bold;
   margin-bottom: 1vw;
   flex-direction: row;
