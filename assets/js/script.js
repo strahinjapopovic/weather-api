@@ -65,9 +65,11 @@ $(document).ready(function() {
 		errorButtonsParagraph.textContent = `(${he.decode("&#8709;")}) - City history is empty`;
 		displayCityButtons.appendChild(errorButtonsParagraph);
 	}
-	displayHistoryButton();
-	if(document.querySelector("#history-city-1")) {
-		getCoordinatesClone(JSON.parse(localStorage.getItem("coordinate"))[0].cityName, key);
+	else {
+		displayHistoryButton();
+		if(document.querySelector("#history-city-1")) {
+			getCoordinatesClone(JSON.parse(localStorage.getItem("coordinate"))[0].cityName, key);
+		}
 	}
 });
 //----------------------------------------------
@@ -204,37 +206,41 @@ const getCoordinates = function(city, key) {
 		errorParagraph.textContent = "";
 		errorSelectedDiv.appendChild(errorParagraph);
 		const getCityCoordinatesURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${key}`;
-		fetch(getCityCoordinatesURL).then(function(response) {
-			if(response.ok) {
-				response.json().then(function(coordinates) {
-					if(coordinates.length !== 0) {
-						errorParagraph.textContent = "";
-						errorSelectedDiv.appendChild(errorParagraph);
-						currentWeather(coordinates);
-						let objArray = [];
-						const cityCoordinateObj = {
-							cityName: coordinates[0].name,
-							latitude: coordinates[0].lat,
-							longitude: coordinates[0].lon,
-						};
-						objArray.push(cityCoordinateObj);
-						objArray = objArray.concat(JSON.parse(localStorage.getItem("coordinate")) || []);
-
-						localStorage.setItem("coordinate", JSON.stringify(objArray));
-						displayHistoryButton();
-					}
-					else {
-						errorParagraph.textContent = `(${he.decode("&#9888;")}) - Enter valid city name`;
-						errorSelectedDiv.appendChild(errorParagraph);
-					}
-				});
-			}
-			else {
-				errorParagraph.textContent = `Server response status code: ( ${response.status.toString()} )`;
-				errorSelectedDiv.appendChild(errorParagraph);
-			}
-		});
+		fetchCore(getCityCoordinatesURL);
 	}
+}
+//----------------------------------------------
+const fetchCore = function(getCityCoordinatesURL) {
+	fetch(getCityCoordinatesURL).then(function(response) {
+		if(response.ok) {
+			response.json().then(function(coordinates) {
+				if(coordinates.length !== 0) {
+					errorParagraph.textContent = "";
+					errorSelectedDiv.appendChild(errorParagraph);
+					currentWeather(coordinates);
+					let objArray = [];
+					const cityCoordinateObj = {
+						cityName: coordinates[0].name,
+						latitude: coordinates[0].lat,
+						longitude: coordinates[0].lon,
+					};
+					objArray.push(cityCoordinateObj);
+					objArray = objArray.concat(JSON.parse(localStorage.getItem("coordinate")) || []);
+
+					localStorage.setItem("coordinate", JSON.stringify(objArray));
+					displayHistoryButton();
+				}
+				else {
+					errorParagraph.textContent = `(${he.decode("&#9888;")}) - Enter valid city name`;
+					errorSelectedDiv.appendChild(errorParagraph);
+				}
+			});
+		}
+		else {
+			errorParagraph.textContent = `Server response status code: ( ${response.status.toString()} )`;
+			errorSelectedDiv.appendChild(errorParagraph);
+		}
+	});
 }
 //----------------------------------------------
 const getCoordinatesClone = function(city, key) {
