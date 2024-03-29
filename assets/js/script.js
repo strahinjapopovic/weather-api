@@ -73,7 +73,7 @@ $(document).ready(function() {
 //----------------------------------------------
 //Testing functions and properties--------------
 const displayCityWeatherCon = function (city, key) {
-	const W_API_URL_GET_LAT_LON = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${key}`;
+	const W_API_URL_GET_LAT_LON = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${key}`;
 	fetch(W_API_URL_GET_LAT_LON).then(function (response) {
 		if (response.ok) {
 			response.json().then(function (data) {
