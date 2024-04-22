@@ -1,4 +1,5 @@
 # Weather-API 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## created by codeXdeveloper
 
@@ -100,4 +101,4 @@ Repository over GitHub account you can find [GitHub Repos][1] and application de
 
 ## License
 
-Please refer to the MIT LICENSE in the repo (./LICENSE).
+Please refer to the MIT LICENSE in the repo.
