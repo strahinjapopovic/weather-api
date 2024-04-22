@@ -100,4 +100,4 @@ Repository over GitHub account you can find [GitHub Repos][1] and application de
 
 ## License
 
-Please refer to the MIT LICENSE in the repo.
+Please refer to the MIT LICENSE in the repo (./LICENSE).
